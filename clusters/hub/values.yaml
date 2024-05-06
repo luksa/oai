@@ -3,32 +3,32 @@ applications:
 
 # openshift configurations
 
-#  openshift-config:
-#    annotations:
-#      argocd.argoproj.io/compare-options: IgnoreExtraneous
-#      argocd.argoproj.io/sync-wave: '5'
-#    destination:
-#      namespace: openshift-config
-#    source:
-#      path: components/openshift-config
-#
-#  patch-operator:
-#    annotations:
-#      argocd.argoproj.io/compare-options: IgnoreExtraneous
-#      argocd.argoproj.io/sync-wave: '5'
-#    destination:
-#      namespace: patch-operator
-#    source:
-#      path: components/patch-operator
-#
-#  reflector-operator:
-#    annotations:
-#      argocd.argoproj.io/compare-options: IgnoreExtraneous
-#      argocd.argoproj.io/sync-wave: '5'
-#    destination:
-#      namespace: reflector-operator
-#    source:
-#      path: components/reflector-operator
+  openshift-config:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '5'
+    destination:
+      namespace: openshift-config
+    source:
+      path: components/openshift-config
+
+  patch-operator:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '5'
+    destination:
+      namespace: patch-operator
+    source:
+      path: components/patch-operator
+
+  reflector-operator:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '5'
+    destination:
+      namespace: reflector-operator
+    source:
+      path: components/reflector-operator
 
 ## NFD
 
@@ -170,41 +170,41 @@ applications:
     source:
       path: components/openshift-servicemesh
 
-#  servicemesh-control-plane:
-#    annotations:
-#      argocd.argoproj.io/compare-options: IgnoreExtraneous
-#      argocd.argoproj.io/sync-wave: '15'
-#    destination:
-#      namespace: istio-system
-#    source:
-#      path: components/servicemesh-control-plane
-#
-#  servicemesh-configuration:
-#    annotations:
-#      argocd.argoproj.io/compare-options: IgnoreExtraneous
-#      argocd.argoproj.io/sync-wave: '25'
-#    destination:
-#      namespace: istio-system
-#    source:
-#      path: components/servicemesh-configuration
-#
-#  kiali-operator:
-#    annotations:
-#      argocd.argoproj.io/compare-options: IgnoreExtraneous
-#      argocd.argoproj.io/sync-wave: '5'
-#    destination:
-#      namespace: openshift-kiali-operator
-#    source:
-#      path: components/kiali-operator
-#
-#  kiali:
-#    annotations:
-#      argocd.argoproj.io/compare-options: IgnoreExtraneous
-#      argocd.argoproj.io/sync-wave: '15'
-#    destination:
-#      namespace: istio-system
-#    source:
-#      path: components/kiali
+  servicemesh-control-plane:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '15'
+    destination:
+      namespace: istio-system
+    source:
+      path: components/servicemesh-control-plane
+
+  servicemesh-configuration:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '25'
+    destination:
+      namespace: istio-system
+    source:
+      path: components/servicemesh-configuration
+
+  kiali-operator:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '5'
+    destination:
+      namespace: openshift-kiali-operator
+    source:
+      path: components/kiali-operator
+
+  kiali:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '15'
+    destination:
+      namespace: istio-system
+    source:
+      path: components/kiali
 
 # Observability           
 
