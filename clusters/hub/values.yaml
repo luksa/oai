@@ -141,12 +141,12 @@ applications:
     source:
       path: components/openshift-serverless
 
-  openshift-serverless-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    source:
-      path: components/openshift-serverless-configuration  
+#  openshift-serverless-configuration:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '15'
+#    source:
+#      path: components/openshift-serverless-configuration
 
 # OpenShift pipelines           
 
