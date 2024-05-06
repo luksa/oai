@@ -3,132 +3,132 @@ applications:
 
 # openshift configurations
 
-  openshift-config:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: openshift-config
-    source:
-      path: components/openshift-config
-
-  patch-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: patch-operator
-    source:
-      path: components/patch-operator 
-
-  reflector-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: reflector-operator
-    source:
-      path: components/reflector-operator         
+#  openshift-config:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: openshift-config
+#    source:
+#      path: components/openshift-config
+#
+#  patch-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: patch-operator
+#    source:
+#      path: components/patch-operator
+#
+#  reflector-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: reflector-operator
+#    source:
+#      path: components/reflector-operator
 
 ## NFD
 
-  nfd-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: openshift-nfd
-    source:
-      path: components/nfd-operator
-
-  nfd-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: openshift-nfd
-    source:
-      path: components/nfd-configuration      
+#  nfd-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: openshift-nfd
+#    source:
+#      path: components/nfd-operator
+#
+#  nfd-configuration:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: openshift-nfd
+#    source:
+#      path: components/nfd-configuration
 
 # NVIDIA GPU
 
-  nvidia-gpu-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: nvidia-gpu-operator
-    source:
-      path: components/nvidia-gpu-operator  
-
-  nvidia-gpu-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: nvidia-gpu-operator
-    source:
-      path: components/nvidia-gpu-configuration  
-
-  nvidia-gpu-nodes:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: nvidia-gpu-operator
-    source:
-      path: components/nvidia-gpu-nodes 
+#  nvidia-gpu-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: nvidia-gpu-operator
+#    source:
+#      path: components/nvidia-gpu-operator
+#
+#  nvidia-gpu-configuration:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '15'
+#    destination:
+#      namespace: nvidia-gpu-operator
+#    source:
+#      path: components/nvidia-gpu-configuration
+#
+#  nvidia-gpu-nodes:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: nvidia-gpu-operator
+#    source:
+#      path: components/nvidia-gpu-nodes
 
 # cert manager
 
-  cert-utils-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: cert-utils-operator
-    source:
-      path: components/cert-utils-operator   
-
-  cert-manager-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: cert-manager
-    source:
-      path: components/cert-manager-configuration
-    extraFields: |
-      ignoreDifferences:
-        - group: 'cert-manager.io'
-          jsonPointers:
-            - /spec/acme/solvers
-          kind: ClusterIssuer            
+#  cert-utils-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: cert-utils-operator
+#    source:
+#      path: components/cert-utils-operator
+#
+#  cert-manager-configuration:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '15'
+#    destination:
+#      namespace: cert-manager
+#    source:
+#      path: components/cert-manager-configuration
+#    extraFields: |
+#      ignoreDifferences:
+#        - group: 'cert-manager.io'
+#          jsonPointers:
+#            - /spec/acme/solvers
+#          kind: ClusterIssuer
 
 # OpenShift AI
 
-  openshift-ai:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: redhat-ods-operator
-    source:
-      path: components/openshift-ai
-
-  data-science-cluster:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    source:
-      path: components/data-science-cluster   
-
-  data-science-cluster-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '25'
-    source:
-      path: components/data-science-cluster-configuration         
+#  openshift-ai:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: redhat-ods-operator
+#    source:
+#      path: components/openshift-ai
+#
+#  data-science-cluster:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '15'
+#    source:
+#      path: components/data-science-cluster
+#
+#  data-science-cluster-configuration:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '25'
+#    source:
+#      path: components/data-science-cluster-configuration
 
 # OpenShift Serverless
 
@@ -150,14 +150,14 @@ applications:
 
 # OpenShift pipelines           
 
-  openshift-pipelines:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: openshift-pipelines-operator
-    source:
-      path: components/openshift-pipelines 
+#  openshift-pipelines:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: openshift-pipelines-operator
+#    source:
+#      path: components/openshift-pipelines
 
 # OpenShift ServiceMesh
 
@@ -170,158 +170,158 @@ applications:
     source:
       path: components/openshift-servicemesh
 
-  servicemesh-control-plane:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: istio-system
-    source:
-      path: components/servicemesh-control-plane
-
-  servicemesh-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '25'
-    destination:
-      namespace: istio-system
-    source:
-      path: components/servicemesh-configuration
-
-  kiali-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: openshift-kiali-operator
-    source:
-      path: components/kiali-operator
-
-  kiali:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: istio-system
-    source:
-      path: components/kiali  
+#  servicemesh-control-plane:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '15'
+#    destination:
+#      namespace: istio-system
+#    source:
+#      path: components/servicemesh-control-plane
+#
+#  servicemesh-configuration:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '25'
+#    destination:
+#      namespace: istio-system
+#    source:
+#      path: components/servicemesh-configuration
+#
+#  kiali-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: openshift-kiali-operator
+#    source:
+#      path: components/kiali-operator
+#
+#  kiali:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '15'
+#    destination:
+#      namespace: istio-system
+#    source:
+#      path: components/kiali
 
 # Observability           
 
-  openshift-tempo-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: openshift-tempo-operator
-    source:
-      path: components/openshift-tempo-operator
-
-  openshift-tempo-instance:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: openshift-tempo-instance
-    source:
-      path: components/openshift-tempo-instance
-
-  user-workload-monitoring:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    source:
-      path: components/user-workload-monitoring
-
-  openshift-grafana-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: openshift-grafana-operator
-    source:
-      path: components/openshift-grafana-operator
-
-  user-workload-grafana-instance:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: openshift-user-workload-grafana-instance     
-    source:
-      path: components/user-workload-grafana-instance
-
-  minio-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5' 
-    destination:
-      namespace: openshift-minio-operator           
-    source:
-      path: components/minio-operator 
-
-  loki-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5' 
-    destination:
-      namespace: openshift-loki-operator           
-    source:
-      path: components/loki-operator
-
-  loki-logging-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15' 
-    destination:
-      namespace: openshift-logging           
-    source:
-      path: components/loki-logging-configuration
-
-  openshift-logging-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5' 
-    destination:
-      namespace: openshift-logging           
-    source:
-      path: components/openshift-logging-operator     
-
-  openshift-logging-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15' 
-    destination:
-      namespace: openshift-logging           
-    source:
-      path: components/openshift-logging-configuration  
-
-  openshift-netobserv-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5' 
-    destination:
-      namespace: openshift-netobserv-operator          
-    source:
-      path: components/openshift-netobserv-operator
-
-  openshift-netobserv-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5' 
-    destination:
-      namespace: netobserv         
-    source:
-      path: components/openshift-netobserv-configuration
-
-  loki-netobserv-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15' 
-    destination:
-      namespace: netobserv           
-    source:
-      path: components/loki-netobserv-configuration                                    
+#  openshift-tempo-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: openshift-tempo-operator
+#    source:
+#      path: components/openshift-tempo-operator
+#
+#  openshift-tempo-instance:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '15'
+#    destination:
+#      namespace: openshift-tempo-instance
+#    source:
+#      path: components/openshift-tempo-instance
+#
+#  user-workload-monitoring:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    source:
+#      path: components/user-workload-monitoring
+#
+#  openshift-grafana-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: openshift-grafana-operator
+#    source:
+#      path: components/openshift-grafana-operator
+#
+#  user-workload-grafana-instance:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '15'
+#    destination:
+#      namespace: openshift-user-workload-grafana-instance
+#    source:
+#      path: components/user-workload-grafana-instance
+#
+#  minio-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: openshift-minio-operator
+#    source:
+#      path: components/minio-operator
+#
+#  loki-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: openshift-loki-operator
+#    source:
+#      path: components/loki-operator
+#
+#  loki-logging-configuration:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '15'
+#    destination:
+#      namespace: openshift-logging
+#    source:
+#      path: components/loki-logging-configuration
+#
+#  openshift-logging-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: openshift-logging
+#    source:
+#      path: components/openshift-logging-operator
+#
+#  openshift-logging-configuration:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '15'
+#    destination:
+#      namespace: openshift-logging
+#    source:
+#      path: components/openshift-logging-configuration
+#
+#  openshift-netobserv-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: openshift-netobserv-operator
+#    source:
+#      path: components/openshift-netobserv-operator
+#
+#  openshift-netobserv-configuration:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: netobserv
+#    source:
+#      path: components/openshift-netobserv-configuration
+#
+#  loki-netobserv-configuration:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '15'
+#    destination:
+#      namespace: netobserv
+#    source:
+#      path: components/loki-netobserv-configuration
 
   # otel-operator:
   #   annotations:
@@ -357,62 +357,62 @@ applications:
 
 # Multitenancy
 
-  namespace-configuration-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: namespace-configuration-operator
-    source:
-      path: components/namespace-configuration-operator
-
-  namespace-configurations:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    source:
-      path: components/namespace-configurations
+#  namespace-configuration-operator:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '5'
+#    destination:
+#      namespace: namespace-configuration-operator
+#    source:
+#      path: components/namespace-configuration-operator
+#
+#  namespace-configurations:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '15'
+#    source:
+#      path: components/namespace-configurations
 
 
 
 ### Tests
 
-  istio-test:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '25'
-    destination:
-      namespace: istio-test      
-    source:
-      path: clusters/hub/overlays/istio-test
-
-
-  notebook-test:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '25'
-    destination:
-      namespace: notebook-test     
-    source:
-      path: clusters/hub/overlays/notebook-test
-
-  serverless-test:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '25'
-    destination:
-      namespace: serverless-test     
-    source:
-      path: clusters/hub/overlays/serverless-test
-
-  inference-service-test:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '25'
-    destination:
-      namespace: inference-service-test
-    source:
-      path: clusters/hub/overlays/inference-service-test
+#  istio-test:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '25'
+#    destination:
+#      namespace: istio-test
+#    source:
+#      path: clusters/hub/overlays/istio-test
+#
+#
+#  notebook-test:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '25'
+#    destination:
+#      namespace: notebook-test
+#    source:
+#      path: clusters/hub/overlays/notebook-test
+#
+#  serverless-test:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '25'
+#    destination:
+#      namespace: serverless-test
+#    source:
+#      path: clusters/hub/overlays/serverless-test
+#
+#  inference-service-test:
+#    annotations:
+#      argocd.argoproj.io/compare-options: IgnoreExtraneous
+#      argocd.argoproj.io/sync-wave: '25'
+#    destination:
+#      namespace: inference-service-test
+#    source:
+#      path: clusters/hub/overlays/inference-service-test
 
 
 

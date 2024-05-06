@@ -13,7 +13,7 @@ The other distinction of this repo is the setup up of the entire observability s
 run
 
 ```sh
-export gitops_repo=https://github.com/raffaelespazzoli/oai.git #<your newly created repo>
+export gitops_repo=https://github.com/luksa/oai.git #<your newly created repo>
 export cluster_name=hub #<your hub cluster name, typically "hub">
 export cluster_base_domain=$(oc get ingress.config.openshift.io cluster --template={{.spec.domain}} | sed -e "s/^apps.//")
 export platform_base_domain=${cluster_base_domain#*.}
