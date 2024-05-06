@@ -13,7 +13,7 @@ default:
       namespace: openshift-gitops
       server: https://kubernetes.default.svc
     source:
-      repoURL: https://github.com/luksa/oai
+      repoURL: https://github.com/luksa/oai.git
       targetRevision: HEAD
     syncOptions:
     - ApplyOutOfSyncOnly=true
